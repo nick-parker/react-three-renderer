@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import PropTypes from 'prop-types';
 
 import CameraDescriptorBase from './CameraDescriptorBase';
+import propTypeInstanceOf from '../../../utils/propTypeInstanceOf';
 
 class PerspectiveCameraDescriptor extends CameraDescriptorBase {
   constructor(react3Instance) {
@@ -17,7 +18,7 @@ class PerspectiveCameraDescriptor extends CameraDescriptorBase {
           threeObject.up(up);
         }
       },
-      default: new THREE.Vector3(0,0,1),
+      default: new THREE.Vector3(0, 0, 1),
     });
 
     this.propTypes = {
