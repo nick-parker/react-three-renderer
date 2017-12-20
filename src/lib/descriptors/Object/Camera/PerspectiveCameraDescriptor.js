@@ -8,6 +8,18 @@ class PerspectiveCameraDescriptor extends CameraDescriptorBase {
   constructor(react3Instance) {
     super(react3Instance);
 
+    this.hasProp('up', {
+      type: propTypeInstanceOf(THREE.Vector3),
+      update(threeObject, up) {
+        threeObject.userData.up = up;
+
+        if (up) {
+          threeObject.up(up);
+        }
+      },
+      default: new THREE.Vector3(0,0,1),
+    });
+
     this.propTypes = {
       ...this.propTypes,
 
